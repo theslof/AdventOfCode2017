@@ -23,7 +23,10 @@ def getcoords(arr, n):
     return None, None
 
 
-while a < int(sys.argv[1]) + 1:
+data = 0
+with open(sys.argv[1], 'r') as fi:
+    data = int(fi.readline())
+while a < data + 1:
     array = map(list, zip(*array[::-1]))
     l = len(array[0])
     row = []
@@ -34,7 +37,7 @@ while a < int(sys.argv[1]) + 1:
         subrow = array[-1][max(k - 1, 0):min(k + 2, l)]
         n += sum(subrow)
         row += [n]
-        if n > int(sys.argv[1]):
+        if n > data:
             print n
             exit(0)
     array += [row]
