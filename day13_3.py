@@ -29,15 +29,3 @@ with open(sys.argv[1], 'r') as fi:
                 delay += 1
                 break
     print delay
-    delay = 0
-    step = 0
-    length = len(firewall)
-    while step < length:
-        print (delay, step, firewall[step])
-        if firewall[step] != 0 and (delay + step) % firewall[step] == 0:
-            step = 0
-            delay += 1
-        step += 1
-    print length, step
-    print delay
-
