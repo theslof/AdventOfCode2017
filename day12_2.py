@@ -1,37 +1,33 @@
 import sys
 
-def printarray(array):
-    for row in array:
-        print row
 
-
-def contains(array, n):
-    for i in array:
-        for j in i:
-            if j == n:
-                return True
-    return False
-
-
-def visit(progs, groups, current):
-    connections = progs[current]
-    groups[-1] += [current]
-    for v in connections:
-        if contains(groups, v):
-            continue
-        else:
-            groups[-1] += [v]
-            visit(progs, groups, v)
-    return groups + [[]]
+class Program:
+    def __init__(self):
+        self.group = {self}
 
 
 with open(sys.argv[1], 'r') as fi:
-    progs = []
-    groups = [[]]
+    groups = list()
+    programs = list()
+    connections = list()
     current = 0
+    # Setup: Parse file and setup all Program objects
     for row in fi:
-        data = map(int, row.replace(',', '').split()[2:])
-        progs += [data]
-    for i in range(0, len(progs)):
-        groups = visit(progs, groups, i)
-    print groups
+        data = map(int, row.replace(',', '').replace('<-> ', '').split())
+        programs.append(Program())
+        connections.append(data[1:])
+    # Connect all Programs with a connection by merging their groups
+    for i in range(0, len(connections)):
+        for n in connections[i]:
+            if programs[i].group != programs[n].group:
+                # The programs share a connection but are in separate groups
+                for p in programs[n].group:
+                    # Add all the programs from n's group to i's group
+                    programs[i].group.add(p)
+                    p.group = programs[i].group
+    # Build a list of unique groups
+    for p in programs:
+        if p.group not in groups:
+            groups.append(p.group)
+
+    print len(groups)
