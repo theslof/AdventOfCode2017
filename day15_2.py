@@ -3,12 +3,6 @@
 
 import sys
 
-
-def printarray(array):
-    for row in array:
-        print row
-
-
 with open(sys.argv[1], 'r') as fi:
     factorA = 16807
     factorB = 48271
