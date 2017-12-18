@@ -1,11 +1,5 @@
 import sys
 
-
-class Program:
-    def __init__(self, n):
-        self.name = n
-
-
 line = [chr(p + 97) for p in range(0, 16)]
 with open(sys.argv[1], 'r') as fi:
     moves = [[m[0]] + m[1:].split('/') for m in fi.readline().split(',')]
