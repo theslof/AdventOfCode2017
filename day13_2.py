@@ -13,10 +13,12 @@ def step(array):
             x = -x
         array[i] = (r, s + x, x)
 
+
 class Packet:
     def __init__(self, delay):
         self.delay = delay
         self.step = 0
+
 
 with open(sys.argv[1], 'r') as fi:
     data = []
