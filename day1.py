@@ -1,13 +1,9 @@
 import sys
 
 with open(sys.argv[1], 'r') as fi:
-    f = fi.readline()
-    print(f)
-    halfway = len(f) / 2
-    index = 0
-    sumOfNums = 0
-    while index < len(f):
-        if f[index] == f[index - halfway]:
-            sumOfNums += int(f[index])
-        index += 1
-print(sumOfNums)
+    data = map(int, fi.readline())
+    summa = 0
+    for i in range(0, len(data)):
+        if data[i] == data[i - 1]:
+            summa += int(data[i])
+    print summa
