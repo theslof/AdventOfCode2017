@@ -1,4 +1,4 @@
-with open("day03_data") as fi:
+with open('day03_data', 'r') as fi:
     data = int(fi.readline())
 
 array = [[1, 1], [2, 4]]
