@@ -1,4 +1,5 @@
-data = 347991
+with open("day03_data") as fi:
+    data = int(fi.readline())
 
 root = 0
 square = 0

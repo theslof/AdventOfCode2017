@@ -1,4 +1,5 @@
-data = 347991
+with open("day03_data") as fi:
+    data = int(fi.readline())
 
 array = [[1, 1], [2, 4]]
 while True:

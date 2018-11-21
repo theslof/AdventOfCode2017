@@ -1,4 +1,4 @@
-with open("day1_data", 'r') as fi:
+with open("day01_data", 'r') as fi:
     data = list(map(int, fi.readline()))
     halfway = int(len(data) / 2)
     index = 0

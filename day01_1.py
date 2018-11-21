@@ -1,4 +1,4 @@
-with open("day1_data", 'r') as fi:
+with open("day01_data", 'r') as fi:
     data = list(map(int, fi.readline()))
     sum = 0
     for index, digit in enumerate(data):
