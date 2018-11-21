@@ -1,15 +1,11 @@
-import sys
-
-with open(sys.argv[1], 'r') as fi:
+with open("day2_data", 'r') as fi:
     checksum = 0
     for line in fi:
-        numbers = map(int, line.split())
-        for n in range (0, len(numbers)-1):
-            first = numbers[n]
-            for m in range (n+1, len(numbers)):
-                second = numbers[m]
-                if first % second == 0:
-                    checksum += first / second
-                if second % first == 0:
-                    checksum += second / first
+        numbers = list(map(int, line.split()))
+        for n, first in enumerate(numbers[:-1]):
+            for second in numbers[n+1:]:
+                large = max(first, second)
+                small = min(first, second)
+                if large % small == 0:
+                    checksum += int(large / small)
 print(checksum)
