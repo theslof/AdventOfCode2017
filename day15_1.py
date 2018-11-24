@@ -4,18 +4,12 @@ with open('day15_data', 'r') as fi:
     factorA = 16807
     factorB = 48271
     divider = 2147483647
-    cycles = 5000000
+    cycles = 40000000
     matches = 0
     for n in range(cycles):
         # Perform the computations
-        while True:
-            remA = (remA * factorA) % divider
-            if not remA & 3:
-                break
-        while True:
-            remB = (remB * factorB) % divider
-            if not remB & 7:
-                break
+        remA = (remA * factorA) % divider
+        remB = (remB * factorB) % divider
         # Mask the remainder against 16 bits and compare
         if remA & 0xFFFF == remB & 0xFFFF:
             matches += 1
