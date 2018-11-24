@@ -20,31 +20,14 @@ def knothash(string):
             step += 1
     # '%02x' % <-- Format every element in list after % as a hex string
     #                 XOR all elements in list ring[n*16:n*16+16]
-    return ''.join(['%02x' % reduce(xor, (x for x in ring[n*16:n*16+16])) for n in range(16)])
-
-
-def stringtobin(string):
-    return ''.join(["{0:04b}".format(int(c, 16)) for c in string])
-
-
-def nukegrid(array, x, y):
-    if x < 0 or x > 127 or y < 0 or y > 127 or array[x][y] == '0':
-        return
-    array[x][y] = '0'
-    nukegrid(array, x - 1, y)
-    nukegrid(array, x, y - 1)
-    nukegrid(array, x + 1, y)
-    nukegrid(array, x, y + 1)
+    return ['%02x' % reduce(xor, (x for x in ring[n*16:n*16+16])) for n in range(16)]
 
 
 data = open('day14_data', 'r').readline() + '-'
-grid = [list(stringtobin(knothash(data + str(i)))) for i in range(128)]
-groups = 0
-for x in range(128):
-    for y in range(128):
-        if grid[x][y] == '0':
-            continue
-        groups += 1
-        nukegrid(grid, x, y)
-
-print(groups)
+print(sum(
+    [len(
+        # Get knothash data, convert to binary and drop zeroes
+        # Return character x from binary representation of character c from knothash of data, only if x == 1
+        # Input string -> knot hash (hex) -> binary -> only ones -> count length -> sum of length of all 128 rows
+        [x for c in knothash(data + str(i)) for x in "{0:04b}".format(int(c, 16)) if x == '1']
+    ) for i in list(range(128))]))
