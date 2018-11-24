@@ -1,6 +1,3 @@
-import sys
-
-
 class Registry:
     def __init__(self):
         self.value = 0
@@ -13,7 +10,7 @@ regs = dict()
 instructions = list()
 freq = 0
 
-with open(sys.argv[1], 'r') as fi:
+with open('day18_data', 'r') as fi:
     for row in fi:
         inst = row.split()
         for i in range(1, len(inst)):
@@ -29,7 +26,6 @@ with open(sys.argv[1], 'r') as fi:
 
     while 0 <= pos < len(instructions):
         inst = instructions[pos]
-        print inst
         if inst[0] == 'snd':
             freq = int(inst[1])
         if inst[0] == 'set':
@@ -42,7 +38,7 @@ with open(sys.argv[1], 'r') as fi:
             inst[1].value %= int(inst[2])
         if inst[0] == 'rcv':
             if int(inst[1]) != 0:
-                print freq
+                print(freq)
                 exit(0)
         if inst[0] == 'jgz':
             if int(inst[1]) > 0:

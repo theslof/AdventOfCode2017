@@ -1,6 +1,3 @@
-import sys
-
-
 class Registry:
     def __init__(self, n):
         self.value = n
@@ -67,7 +64,7 @@ thread1 = Thread(1)
 thread0.twin = thread1
 thread1.twin = thread0
 
-with open(sys.argv[1], 'r') as fi:
+with open('day18_data', 'r') as fi:
     for row in fi:
         inst = row.split()
         inst0 = inst[:]
@@ -88,4 +85,4 @@ with open(sys.argv[1], 'r') as fi:
     while not (thread1.waiting and thread0.waiting):
         thread0.step()
         thread1.step()
-    print thread1.sent
+    print(thread1.sent)
