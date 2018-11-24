@@ -1,4 +1,4 @@
-with open('day19_data', 'r') as fi:
+with open('day19.in', 'r') as fi:
     letters = list()
     grid = list()
     steps = 0

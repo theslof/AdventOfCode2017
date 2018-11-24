@@ -1,4 +1,4 @@
-with open("day02_data", 'r') as fi:
+with open("day02.in", 'r') as fi:
     # Dirty list comprehension, read bottom up:
     print(
         # sum results

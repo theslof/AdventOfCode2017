@@ -1,4 +1,4 @@
-with open('day13_data', 'r') as fi:
+with open('day13.in', 'r') as fi:
     # Cleanup of input
     data = [[int(x) for x in row.strip().split(':')] for row in fi]
     # Do the math, iterations is unnecessary

@@ -8,7 +8,7 @@ def manhattan(steps, p, v, a):
     return int(abs(cx) + abs(cy) + abs(cz))
 
 
-with open('day20_data', 'r') as fi:
+with open('day20.in', 'r') as fi:
     data = list()
     i = 0
     for row in fi:

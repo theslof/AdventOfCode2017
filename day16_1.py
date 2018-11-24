@@ -1,5 +1,5 @@
 line = [chr(p + 97) for p in range(16)]
-with open('day16_data', 'r') as fi:
+with open('day16.in', 'r') as fi:
     moves = [[m[0]] + m[1:].split('/') for m in fi.readline().split(',')]
     for move in moves:
         if move[0] == 's':

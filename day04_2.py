@@ -9,7 +9,7 @@ def isvalid(line):
     return True
 
 
-with open('day04_data', 'r') as fi:
+with open('day04.in', 'r') as fi:
     sumOfValid = 0
     for line in fi:
         if isvalid(line):

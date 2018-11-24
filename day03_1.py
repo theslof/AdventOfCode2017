@@ -1,4 +1,4 @@
-with open('day03_data', 'r') as fi:
+with open('day03.in', 'r') as fi:
     data = int(fi.readline())
 
 root = 0

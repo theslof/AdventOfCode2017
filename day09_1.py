@@ -7,7 +7,7 @@ def count(array, depth):
     return depth
 
 
-with open('day09_data', 'r') as fi:
+with open('day09.in', 'r') as fi:
     s = fi.readline()
     # Scrub all '!.'
     s = re.sub('!.', '', s)

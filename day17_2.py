@@ -5,7 +5,7 @@
 
 index = 1
 cycles = 50000000
-step = int(open('day17_data', 'r').readline())
+step = int(open('day17.in', 'r').readline())
 solution = 1
 for i in range(2, cycles + 1):
     index = (index + step) % i + 1

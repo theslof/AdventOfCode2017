@@ -1,4 +1,4 @@
-with open('day15_data', 'r') as fi:
+with open('day15.in', 'r') as fi:
     remA = int(fi.readline().split()[-1])
     remB = int(fi.readline().split()[-1])
     factorA = 16807

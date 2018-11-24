@@ -1,4 +1,4 @@
-with open('day04_data', 'r') as fi:
+with open('day04.in', 'r') as fi:
     lines = 0
     for line in fi:
         words = line.split()

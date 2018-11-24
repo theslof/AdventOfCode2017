@@ -1,7 +1,7 @@
 regs = {}
 largest = 0
 
-with open('day08_data', 'r') as fi:
+with open('day08.in', 'r') as fi:
     instructions = [row.replace('if', '').replace('inc', '+').replace('dec', '-').split() for row in fi]
     for reg1, op, reg2, reg3, cond, val in instructions:
         a = regs.get(reg1, 0)

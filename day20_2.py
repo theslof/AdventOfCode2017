@@ -33,7 +33,7 @@ def checkcollision(array: {Pixel}):
     return deadpixels
 
 
-with open('day20_data', 'r') as fi:
+with open('day20.in', 'r') as fi:
     data = set()
     for row in fi:
         p = Pixel()

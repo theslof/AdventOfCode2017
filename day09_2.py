@@ -1,7 +1,7 @@
 import re
 
 
-with open('day09_data', 'r') as fi:
+with open('day09.in', 'r') as fi:
     # Scrub all '!.'
     s = re.sub('!.', '', fi.read())
     # Find all substrings between < and >, flatten array and count the characters

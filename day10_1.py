@@ -1,6 +1,6 @@
 length = 256
 
-with open('day10_data', 'r') as fi:
+with open('day10.in', 'r') as fi:
     ring = list(range(length))
     ops = [int(s) for s in fi.readline().split(',')]
     i = 0

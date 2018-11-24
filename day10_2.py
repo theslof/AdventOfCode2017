@@ -3,7 +3,7 @@ from functools import reduce
 
 length = 256
 
-with open('day10_data', 'r') as fi:
+with open('day10.in', 'r') as fi:
     ring = list(range(length))
     ops = [ord(c) for c in [s for s in fi.readline()]] + [17, 31, 73, 47, 23]
     i = 0

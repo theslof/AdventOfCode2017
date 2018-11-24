@@ -64,7 +64,7 @@ thread1 = Thread(1)
 thread0.twin = thread1
 thread1.twin = thread0
 
-with open('day18_data', 'r') as fi:
+with open('day18.in', 'r') as fi:
     for row in fi:
         inst = row.split()
         inst0 = inst[:]

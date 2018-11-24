@@ -1,4 +1,4 @@
-with open('day06_data', 'r') as fi:
+with open('day06.in', 'r') as fi:
     states = []
     array = [int(x) for x in fi.readline().split()]
     numCycles = 0

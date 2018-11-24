@@ -7,7 +7,7 @@ def dist(x, y):
 
 opposites = [('n', 's'), ('ne', 'sw'), ('nw', 'se')]
 
-with open('day11_data', 'r') as fi:
+with open('day11.in', 'r') as fi:
     data = fi.readline().split(',')
     x = 0
     y = 0

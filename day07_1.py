@@ -1,4 +1,4 @@
-with open('day07_data', 'r') as fi:
+with open('day07.in', 'r') as fi:
     weight = {}
     children = {}
 

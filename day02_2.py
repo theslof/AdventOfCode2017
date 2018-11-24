@@ -1,4 +1,4 @@
-with open("day02_data", 'r') as fi:
+with open("day02.in", 'r') as fi:
     checksum = 0
     for line in fi:
         numbers = list(map(int, line.split()))

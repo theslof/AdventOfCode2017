@@ -23,7 +23,7 @@ def knothash(string):
     return ['%02x' % reduce(xor, (x for x in ring[n*16:n*16+16])) for n in range(16)]
 
 
-data = open('day14_data', 'r').readline() + '-'
+data = open('day14.in', 'r').readline() + '-'
 print(sum(
     [len(
         # Get knothash data, convert to binary and drop zeroes

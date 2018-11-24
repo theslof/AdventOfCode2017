@@ -1,7 +1,7 @@
 from itertools import count
 
 # Cleanup of input
-data = [[int(x) for x in row.strip().split(':')] for row in open('day13_data', 'r')]
+data = [[int(x) for x in row.strip().split(':')] for row in open('day13.in', 'r')]
 
 print(
     # Fetch the first delay value that results in no collisions

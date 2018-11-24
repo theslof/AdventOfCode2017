@@ -1,4 +1,4 @@
-step = int(open('day17_data', 'r').readline())
+step = int(open('day17.in', 'r').readline())
 spinlock = [0, 1]
 index = 1
 cycles = 2017

@@ -1,4 +1,4 @@
-with open('day05_data', 'r') as fi:
+with open('day05.in', 'r') as fi:
     instr: [int] = [int(x) for x in fi]
     length: int = len(instr)
     jumps: int = 0

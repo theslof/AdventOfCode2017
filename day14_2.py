@@ -37,7 +37,7 @@ def nukegrid(array, x, y):
     nukegrid(array, x, y + 1)
 
 
-data = open('day14_data', 'r').readline() + '-'
+data = open('day14.in', 'r').readline() + '-'
 grid = [list(stringtobin(knothash(data + str(i)))) for i in range(128)]
 groups = 0
 for x in range(128):

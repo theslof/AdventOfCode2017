@@ -3,7 +3,7 @@ class Program:
         self.group = {self}
 
 
-with open('day12_data', 'r') as fi:
+with open('day12.in', 'r') as fi:
     groups = list()
     programs = list()
     connections = list()

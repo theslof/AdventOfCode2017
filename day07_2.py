@@ -23,7 +23,7 @@ def totalWeightOf(program):
     exit(0)
 
 
-with open('day07_data', 'r') as fi:
+with open('day07.in', 'r') as fi:
     # Setup array
     for line in fi:
         # Program, weight, child programs = Scrub '->' and ',' from the line and split it into words

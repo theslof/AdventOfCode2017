@@ -10,7 +10,7 @@ regs = dict()
 instructions = list()
 freq = 0
 
-with open('day18_data', 'r') as fi:
+with open('day18.in', 'r') as fi:
     for row in fi:
         inst = row.split()
         for i in range(1, len(inst)):
