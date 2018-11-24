@@ -1,15 +1,7 @@
-import sys
-
-
-def printarray(array):
-    for row in array:
-        print row
-
-
 length = 256
 
-with open(sys.argv[1], 'r') as fi:
-    ring = range(0, length)
+with open('day10_data', 'r') as fi:
+    ring = list(range(length))
     ops = [int(s) for s in fi.readline().split(',')]
     i = 0
     step = 0
@@ -22,4 +14,4 @@ with open(sys.argv[1], 'r') as fi:
             ring = ring[0:i] + ring[i:i + op][::-1] + ring[i + op:]
         i = (i + step + op) % length
         step += 1
-    print ring[0] * ring[1]
+    print(ring[0] * ring[1])

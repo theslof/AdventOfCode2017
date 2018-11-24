@@ -1,12 +1,13 @@
-import sys
-import math
+from collections import Counter
 
 
 def dist(x, y):
-    return int((math.fabs(x) + math.fabs(y) + math.fabs(x + y)) / 2)
+    return int((abs(x) + abs(y) + abs(x + y)) / 2)
 
 
-with open(sys.argv[1], 'r') as fi:
+opposites = [('n', 's'), ('ne', 'sw'), ('nw', 'se')]
+
+with open('day11_data', 'r') as fi:
     data = fi.readline().split(',')
     x = 0
     y = 0
@@ -15,23 +16,17 @@ with open(sys.argv[1], 'r') as fi:
         maxdist = max(maxdist, dist(x, y))
         if step == 'n':
             y += 1
-            continue
-        if step == 's':
+        elif step == 's':
             y -= 1
-            continue
-        if step == 'ne':
+        elif step == 'ne':
             x += 1
-            continue
-        if step == 'sw':
+        elif step == 'sw':
             x -= 1
-            continue
-        if step == 'nw':
+        elif step == 'nw':
             y += 1
             x -= 1
-            continue
-        if step == 'se':
+        elif step == 'se':
             y -= 1
             x += 1
-            continue
-    print dist(x, y)
-    print maxdist
+    print('11.1: ' + str(dist(x, y)))
+    print('11.2: ' + str(maxdist))
