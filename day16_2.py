@@ -1,17 +1,15 @@
-import sys
-
-line = [chr(p + 97) for p in range(0, 16)]
+line = [chr(p + 97) for p in range(16)]
 permutations = [line]
 cycles = 1000000000
-with open(sys.argv[1], 'r') as fi:
+with open('day16_data', 'r') as fi:
     moves = [[m[0]] + m[1:].split('/') for m in fi.readline().split(',')]
     count = 0
-    print '0: ' + ''.join(line)
-    match = False
+    newLine = ''
     # Perform the dance until the pattern repeats, which will be the number of unique states.
-    while not match:
+    while not newLine == line:
         newLine = list(permutations[-1])
-        print str(count) + ': ' + ''.join(newLine)
+        # Uncomment the following line to see all states
+#        print(str(count) + ': ' + ''.join(newLine))
         count += 1
         # Dance
         for move in moves:
@@ -36,6 +34,5 @@ with open(sys.argv[1], 'r') as fi:
                 newLine[b] = pa
                 newLine[a] = pb
         permutations.append(newLine)
-        match = newLine == line
-    print 'Pattern repeats after ' + str(count) + ' cycles! The state after all cycles is: '
-    print str(cycles % count) + ': ' + ''.join(permutations[cycles % count])
+    print('Pattern repeats after ' + str(count) + ' cycles! The state after ' + str(cycles) + ' cycles is: ')
+    print(''.join(permutations[cycles % count]))
